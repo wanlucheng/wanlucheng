@@ -1,0 +1,80 @@
+# 腾讯云主机 centos7.2 重装简述
+
+解决中文乱码
+
+```
+vim /etc/locale.conf
+LANG="en_US.UTF-8"
+```
+
+更新 yum & 安装必选扩展
+
+```
+yum -y update
+yum -y install epel-release
+
+yum -y install gcc
+
+yum -y install readline-devel
+yum -y install sqlite-devel
+yum -y install openssl-devel
+yum -y install zlib-devel
+```
+
+安装 tmpwatch
+
+```
+$ yum -y install tmpwatch
+```
+
+```
+$ vim /etc/cron.daily/tmpwatch.cron
+#!/bin/bash
+/usr/sbin/tmpwatch -u -f 72 /tmp
+/usr/sbin/tmpwatch -u -f 72 /var/tmp
+```
+
+```
+vim /etc/crontab
+51 * * * * root run-parts /etc/cron.hourly
+24 7 * * * root run-parts /etc/cron.daily
+22 4 * * 0 root run-parts /etc/cron.weekly
+42 4 1 * * root run-parts /etc/cron.monthly
+```
+
+```
+service crond restart
+```
+
+安装 screen
+
+```
+yum -y install screen
+
+vim ~/.screenrc
+shell -$SHELL
+```
+
+安装 python
+
+```
+wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
+tar -zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+mkdir /root/application/python3.6
+mkdir /root/application/python3.6/lib
+./configure --enable-shared --prefix /root/application/python3.6 LDFLAGS="-Wl,-rpath /root/application/python3.6/lib"
+make
+make install
+```
+
+安装 golang
+
+```
+wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz
+tar -zxvf go1.8.1.linux-amd64.tar.gz
+
+vim .bash_profire
+export GOROOT=/root/application/go
+export GOPATH=/root/application/gopath
+```
