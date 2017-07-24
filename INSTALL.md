@@ -40,7 +40,7 @@ $ tar zxvf node-v7.10.0.tar.gz
 3. 编译安装
 ```sh
 $ cd node-v7.10.0
-$ ./configure -prefix=/usr/local/node/7.10.0
+$ ./configure --prefix=/usr/local/node/7.10.0
 $ make && make install
 ```
 4. 配置环境变量
