@@ -50,7 +50,7 @@ $ vim /etc/profile
 在 export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL 一行的上面添加如下内容:
 ```v
 # set for nodejs
-export NODE_HOME=/usr/local/node/0.10.24
+export NODE_HOME=/usr/local/node/7.10.0
 export PATH=$NODE_HOME/bin:$PATH
 ```
 5. 配置生效
