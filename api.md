@@ -1,16 +1,44 @@
-# 1. 获取所有分类列表
-"/article/getTypeList"
-## method: 
-get
-## 请求参数
-| key        | type           | desc  |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+### 1. 获取所有分类列表
 
+- /article/getTypeList
+- method: get
 
-"/article/getTagList"
+#### 请求参数
 
-"/article/getArticleList"
-"/article/getArticleListPlug"
-"/article/getArticleDetail"
+| key | type | desc |
+|-----|------|------|
+| - | - | - |
+
+#### 响应参数
+
+| key | type | desc |
+|-----|------|------|
+| type_id | int | 类型ID |
+| name | string | 类型名称 |
+``` json 
+{
+  "code": 0,
+  "data": {
+    "list": [
+      {
+        "type_id": 1,
+        "name": "公告"
+      },
+      {
+        "type_id": 2,
+        "name": "新闻"
+      },
+      {
+        "type_id": 3,
+        "name": "教程"
+      }
+    ]
+  },
+  "msg": ""
+}
+```
+
+### 2. /article/getTagList
+### 3. /article/getArticleList
+### 4. /article/getArticleListPlug
+### 5. /article/getArticleDetail
