@@ -84,6 +84,13 @@
 | start | int | 查找的起始位置(按文章创建时间倒序排序) |
 | count | int | 文章个数 |
 
+```
+key取值
+
+- : key=""表示查找所有文章
+- 分类: 查找分类为value的文章
+```
+
   /article/getArticleList?key=分类&value=公告&start=0&count=10
 
 #### 响应参数
