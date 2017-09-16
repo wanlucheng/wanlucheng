@@ -85,6 +85,7 @@ $ tar -zxvf cmake-3.8.0.tar.gz
 $ cd cmake-3.8.0
 $ ./bootstrap
 $ yum install readline-devel
+$ yum install zlib-devel
 ```
 2. 连接
 ```
