@@ -82,7 +82,7 @@ $ make
 $ yum install -y gcc gcc-c++ make automake 
 $ wget http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
 $ tar -zxvf cmake-3.8.0.tar.gz
-$ cd cmake-3.8.0.tar.gz
+$ cd cmake-3.8.0
 $ ./bootstrap
 $ yum install readline-devel
 ```
