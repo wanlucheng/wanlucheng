@@ -87,6 +87,7 @@ $ ./bootstrap
 $ yum install readline-devel
 $ yum install zlib-devel
 ```
+https://www.postgresql.org/docs/9.6/static/install-short.html
 2. 连接
 ```
 $ pgcli postgres://postgres:@localhost:5432/test
